@@ -17,7 +17,7 @@ const HomePage = () => {
                 <input type="text" name="search" id="search" placeholder="search..." title="search"
                   className="placeholder:text-xs rounded-3xl w-full text-gray-900  outline-none  py-1 px-4 pl-7" />
               </label>
-              <div className="flex items-center max-w-1/2 mb-4 space-x-4 first:ml-0 mb-5 ">
+              <div className="flex items-center max-w-1/2 space-x-4 first:ml-0 mb-5 ">
                 <div>My topices:</div>
                 <div className="flex content-start items-center space-x-2">
                   {Array.from({ length: 4 }).map((_, i) => <div key={i}
