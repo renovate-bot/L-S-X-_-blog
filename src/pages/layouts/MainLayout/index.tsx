@@ -20,8 +20,10 @@ function MainLayout({ children }: React.PropsWithChildren) {
           <div>
             <BsBell />
           </div>
-          <div >
-            <img className='rounded-full w-10 h-10' src={sessionData?.user.image || ''} alt="" />
+          <div onClick={() => {
+
+          }}>
+            <img className='rounded-full w-10 h-10' src={sessionData?.user?.image || ''} alt="" />
           </div>
           <div>
             {
