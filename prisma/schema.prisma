@@ -13,6 +13,7 @@ datasource db {
     // https://next-auth.js.org/adapters/prisma#create-the-prisma-schema
     // https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#string
     url      = env("DATABASE_URL")
+    directUrl = env("DATABASE_URL")
 }
 
 model Example {
@@ -36,7 +37,6 @@ model Account {
     id_token          String? // @db.Text
     session_state     String?
     user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-
     @@unique([provider, providerAccountId])
 }
 
