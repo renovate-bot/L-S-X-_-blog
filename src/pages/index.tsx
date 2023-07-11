@@ -1,9 +1,11 @@
-import React from "react"
 import { CiSearch } from 'react-icons/ci';
-import { HiChevronDown } from 'react-icons/Hi'
 import MainLayout from "./layouts/MainLayout";
-
+import Modal from "./layouts/Modal";
+import { HiChevronDown } from "react-icons/Hi";
+import { useAtom } from 'jotai'
+import { isWriteOpenAtom } from "./store/atom";
 const HomePage = () => {
+  const [isWriteOpen, setIsWriteOpen] = useAtom(isWriteOpenAtom)
   return (
     <MainLayout>
       <section className="grid grid-cols-12  grid-flow-col-dense  place-items-center w-full h-full">
@@ -109,7 +111,9 @@ const HomePage = () => {
           </div>
         </aside>
       </section>
-      <div className="grid grid-cols-12"></div>
+      <Modal isOpen={isWriteOpen} onClose={() => { setIsWriteOpen(false) }}>
+        <div className='w-40 h-20' >你好</div>
+      </Modal>
     </MainLayout>
   )
 }
