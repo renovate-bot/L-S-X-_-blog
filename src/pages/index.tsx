@@ -3,7 +3,7 @@ import MainLayout from "./layouts/MainLayout";
 import Modal from "./layouts/Modal";
 import { HiChevronDown } from "react-icons/Hi";
 import { useAtom } from 'jotai'
-import { isWriteOpenAtom } from "./store/atom";
+import { isWriteOpenAtom } from "./store/store";
 const HomePage = () => {
   const [isWriteOpen, setIsWriteOpen] = useAtom(isWriteOpenAtom)
   return (

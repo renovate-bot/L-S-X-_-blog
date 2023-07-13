@@ -1,7 +1,7 @@
-import { isWriteOpenAtom } from '@/pages/store/atom'
-import { useAtom, atom, useSetAtom, useAtomValue } from 'jotai'
+import { isWriteOpenAtom } from '@/pages/store/store'
+import { useSetAtom, useAtomValue } from 'jotai'
 import { signIn, signOut, useSession } from 'next-auth/react'
-import React, { useMemo } from 'react'
+import React from 'react'
 import { HiLogin, HiLogout } from 'react-icons/Hi'
 import { BsBell } from 'react-icons/bs'
 import { FiEdit } from 'react-icons/fi'
@@ -29,8 +29,8 @@ function MainLayout({ children }: React.PropsWithChildren) {
           <div>
             {
               status === "authenticated" ? <div className='flex space-x-4'>
-                <button className="flex transition hover:border-gray-900 my-2 hover:text-gray-900 rounded  space-x-3 items-center  border border-gray-200 px-4 py-2.5">
-                  <div onClick={() => setIsWriteOpe(true)}>Write</div>
+                <button onClick={() => setIsWriteOpe(true)} className="flex transition hover:border-gray-900 my-2 hover:text-gray-900 rounded  space-x-3 items-center  border border-gray-200 px-4 py-2.5">
+                  <div >Write</div>
                   <div>
                     <FiEdit />
                   </div>
@@ -45,7 +45,6 @@ function MainLayout({ children }: React.PropsWithChildren) {
                   <div>Signin</div>
                   <HiLogin />
                 </button>}
-
           </div>
         </div>
       </header>
