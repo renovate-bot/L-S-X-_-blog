@@ -1,15 +1,15 @@
-import React, { Fragment, ReactNode } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
+import type { ReactNode } from "react";
+import React, { Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 
 type ModalProps = {
-  isOpen: boolean
-  onClose: () => void
-  title?: string
-  children?: ReactNode
-}
+  isOpen: boolean;
+  onClose: () => void;
+  title?: string;
+  children?: ReactNode;
+};
 
 function Modal({ isOpen, onClose, title, children }: ModalProps) {
-  console.log(isOpen)
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={onClose}>
@@ -36,22 +36,20 @@ function Modal({ isOpen, onClose, title, children }: ModalProps) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className=" w-full max-w-lg transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                 <Dialog.Title
                   as="h3"
                   className="text-lg font-medium leading-6 text-gray-900"
                 >
                   {title}
                 </Dialog.Title>
-                <div className="mt-2">
-                  {children}
-                </div>
+                {children}
               </Dialog.Panel>
             </Transition.Child>
           </div>
         </div>
       </Dialog>
     </Transition>
-  )
+  );
 }
-export default Modal
+export default Modal;
