@@ -1,2 +1,2 @@
-import { atom } from 'jotai'
-export const isWriteOpenAtom = atom(false)
+import { atom } from "jotai";
+export const isWriteOpenAtom = atom(false);

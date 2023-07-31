@@ -1,13 +1,7 @@
-
-import React from 'react'
+import React from "react";
 
 function MainLayout({ children }: React.PropsWithChildren) {
-
-  return (
-    <div>
-      {children}
-    </div>
-  )
+  return <div>{children}</div>;
 }
 
-export default MainLayout
+export default MainLayout;
