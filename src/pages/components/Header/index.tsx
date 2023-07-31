@@ -51,7 +51,7 @@ const Header = () => {
       <div>
         <IoReorderThreeOutline className="text-2xl text-gray-600" />
       </div>
-      <div className="text-xl font-thin">Asong Blog App</div>
+      <h1 className="text-xl font-thin">Asong Blog App</h1>
       <div className=" flex items-center space-x-4">
         <div>
           <BsBell />
