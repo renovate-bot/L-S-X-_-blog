@@ -21,7 +21,6 @@ const writeFormShema = z.object({
 
 const WriteFormModal = () => {
   const [isWriteOpen, setIsWriteOpen] = useAtom(isWriteOpenAtom);
-  console.log(isWriteOpen);
   const {
     register,
     handleSubmit,
