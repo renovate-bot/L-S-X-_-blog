@@ -1,0 +1,26 @@
+name: Pull Request Tests
+
+on:
+  pull_request:
+    branches:
+      - master # 这里指定你希望测试的分支，例如 master
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.14.1" # 这里指定你希望使用的 Node.js 版本
+
+      - name: Install dependencies
+        run: npm install # 这里可以根据你的项目使用适当的包管理器进行安装
+
+      - name: Run tests
+        run: npm dev # 这里运行你的测试脚本或命令
