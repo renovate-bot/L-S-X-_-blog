@@ -30,5 +30,13 @@ jobs:
       - name: Install dependencies
         run: yarn # 这里可以根据你的项目使用适当的包管理器进行安装
 
+      - name: Set environment variables
+        run: |
+          echo "DATABASE_URL=\"$DATABASE_URL\"" >> $GITHUB_ENV
+          echo "NEXTAUTH_SECRET=\"$NEXTAUTH_SECRET\"" >> $GITHUB_ENV
+          echo "NEXTAUTH_URL=\"$NEXTAUTH_URL\"" >> $GITHUB_ENV
+          echo "GITHUB_ID=\"$GITHUB_ID\"" >> $GITHUB_ENV
+          echo "GITHUB_SECRET=\"$GITHUB_SECRET\"" >> $GITHUB_ENV
+
       - name: Run tests
         run: yarn test # 这里运行你的测试脚本或命令
