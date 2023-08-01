@@ -2,61 +2,33 @@ name: pull_request
 on:
   pull_request:
     branches:
-      - master
-
+      - master # 这里指定你希望测试的分支，例如 master
 jobs:
   test:
     name: Run Tests
     runs-on: ubuntu-latest
-
-    inputs:
-      database_url:
-        description: "Database URL for tests"
-        required: true
-      nextauth_secret:
-        description: "NextAuth secret for tests"
-        required: true
-      nextauth_url:
-        description: "NextAuth URL for tests"
-        required: true
-      discord_client_id:
-        description: "Discord Client ID for tests"
-        required: true
-      discord_client_secret:
-        description: "Discord Client Secret for tests"
-        required: true
-      auth_github_id:
-        description: "GitHub ID for tests"
-        required: true
-      auth_github_secret:
-        description: "GitHub Secret for tests"
-        required: true
     env:
-      DATABASE_URL: ${{ github.event.inputs.DATABASE_URL}}
-      NEXTAUTH_SECRET: ${{ github.event.inputs.NEXTAUTH_SECRET}}
-      NEXTAUTH_URL: ${{ github.event.inputs.NEXTAUTH_URL}}
-      DISCORD_CLIENT_ID: ${{ github.event.inputs.DISCORD_CLIENT_ID}}
-      DISCORD_CLIENT_SECRET: ${{ github.event.inputs.DISCORD_CLIENT_SECRET}}
-      AUTH_GITHUB_ID: ${{ github.event.inputs.AUTH_GITHUB_ID}}
-      AUTH_GITHUB_SECRET: ${{ github.event.inputs.AUTH_GITHUB_SECRET}}
-
+      DATABASE_URL: mysql://root:123456@127.0.0.1:3306/mydatabase
+      NEXTAUTH_SECRET: lXysSFqiiRbsq98ZIkrP6Rquse
+      NEXTAUTH_URL: localhost:3000
+      DISCORD_CLIENT_ID: 765033707565058
+      DISCORD_CLIENT_SECRET: c0kj1k0frws72z3mq8nc
+      AUTH_GITHUB_ID: w4s059crr8baf6ghk28b
+      AUTH_GITHUB_SECRET: z5wel3ol5cxqvxkiv43kb4x3gs4gydxz
+      # 方便PR测试，仅为mock数据
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18.14.1"
-
+          node-version: "18.14.1" # 这里指定你希望使用的 Node.js 版本
       - name: Print environment variables
         run: |
-          echo "Database URL: ${{ inputs.database_url }}"
-          echo "NextAuth Secret: ${{ inputs.nextauth_secret }}"
-          # 打印其他 inputs 变量...
-
+          echo $DATABASE_URL
+          echo $NEXTAUTH_SECRET
+          # 打印其他 secrets 变量...
       - name: Install dependencies
-        run: yarn
-
+        run: yarn # 这里可以根据你的项目使用适当的包管理器进行安装
       - name: Run tests
-        run: yarn test # 使用输入参数代替 Secrets，例如：$DATABASE_URL 改为 ${{ inputs.database_url }}
+        run: yarn test # 这里运行你的测试脚本或命令
