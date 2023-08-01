@@ -1,11 +1,10 @@
+import { type Session } from "next-auth";
+import { SessionProvider } from "next-auth/react";
+import { HiChevronDown } from "react-icons/Hi";
 import { CiSearch } from "react-icons/ci";
 import MainLayout from "./layouts/MainLayout";
-import { HiChevronDown } from "react-icons/Hi";
-import WriteFormModal from "./components/WriteFormModal";
-import { type Session } from "next-auth";
-
 import Header from "./components/Header";
-import { SessionProvider } from "next-auth/react";
+import WriteFormModal from "./components/WriteFormModal";
 const HomePage = ({ session }: { session: Session }) => {
   return (
     <SessionProvider session={session}>
