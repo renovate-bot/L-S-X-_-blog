@@ -19,6 +19,12 @@ jobs:
       AUTH_GITHUB_SECRET: ${{ secrets.AUTH_GITHUB_SECRET}}
 
     steps:
+      - name: Print environment variables
+        run: |
+          echo $DATABASE_URL
+          echo $NEXTAUTH_SECRET
+          # 打印其他 secrets 变量...
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
