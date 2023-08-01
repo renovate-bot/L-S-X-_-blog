@@ -2,7 +2,7 @@ import React from "react";
 import { isWriteOpenAtom } from "@/pages/store";
 import { useSetAtom } from "jotai";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { HiLogin, HiLogout } from "react-icons/Hi";
+import { MdLogin, MdLogout } from "react-icons/md";
 import { BsBell } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
 import { IoReorderThreeOutline } from "react-icons/io5";
@@ -28,7 +28,7 @@ const Header = () => {
           className="my-2 flex items-center space-x-3 rounded border  border-gray-200 px-4  py-2.5 transition hover:border-gray-900 hover:text-gray-900"
         >
           <div>Logout</div>
-          <HiLogout />
+          <MdLogout />
         </button>
       </div>
     );
@@ -41,7 +41,7 @@ const Header = () => {
         className="my-2 flex items-center space-x-3 rounded border  border-gray-200 px-4  py-2.5 transition hover:border-gray-900 hover:text-gray-900"
       >
         <div>Signin</div>
-        <HiLogin />
+        <MdLogin />
       </button>
     );
   };
