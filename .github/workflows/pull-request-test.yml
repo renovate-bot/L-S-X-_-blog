@@ -32,13 +32,13 @@ jobs:
         description: "GitHub Secret for tests"
         required: true
     env:
-      DATABASE_URL: ${{ inputs.DATABASE_URL}}
-      NEXTAUTH_SECRET: ${{ inputs.NEXTAUTH_SECRET}}
-      NEXTAUTH_URL: ${{ inputs.NEXTAUTH_URL}}
-      DISCORD_CLIENT_ID: ${{ inputs.DISCORD_CLIENT_ID}}
-      DISCORD_CLIENT_SECRET: ${{ inputs.DISCORD_CLIENT_SECRET}}
-      AUTH_GITHUB_ID: ${{ inputs.AUTH_GITHUB_ID}}
-      AUTH_GITHUB_SECRET: ${{ inputs.AUTH_GITHUB_SECRET}}
+      DATABASE_URL: ${{ github.event.inputs.DATABASE_URL}}
+      NEXTAUTH_SECRET: ${{ github.event.inputs.NEXTAUTH_SECRET}}
+      NEXTAUTH_URL: ${{ github.event.inputs.NEXTAUTH_URL}}
+      DISCORD_CLIENT_ID: ${{ github.event.inputs.DISCORD_CLIENT_ID}}
+      DISCORD_CLIENT_SECRET: ${{ github.event.inputs.DISCORD_CLIENT_SECRET}}
+      AUTH_GITHUB_ID: ${{ github.event.inputs.AUTH_GITHUB_ID}}
+      AUTH_GITHUB_SECRET: ${{ github.event.inputs.AUTH_GITHUB_SECRET}}
 
     steps:
       - name: Checkout repository
@@ -47,7 +47,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.14.1
+          node-version: "18.14.1"
 
       - name: Print environment variables
         run: |
