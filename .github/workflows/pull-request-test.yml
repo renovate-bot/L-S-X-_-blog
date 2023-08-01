@@ -1,6 +1,6 @@
-name: push
+name: pull_request
 on:
-  push:
+  pull_request:
     branches:
       - master # 这里指定你希望测试的分支，例如 master
 
