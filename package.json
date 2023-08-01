@@ -30,7 +30,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.2",
-    "@tanstack/react-query": "4.0.5",
+    "@tanstack/react-query": "4.32.0",
     "superjson": "1.13.1",
     "zod": "^3.21.4"
   },
