@@ -1,6 +1,6 @@
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
-import { HiChevronDown } from "react-icons/Hi";
+import { BsChevronDown } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import MainLayout from "./layouts/MainLayout";
 import Header from "./components/Header";
@@ -50,7 +50,7 @@ const HomePage = ({ session }: { session: Session }) => {
                   <button className="flex items-center space-x-2  rounded-xl border border-gray-800 px-4 py-1.5 font-semibold">
                     <div>Following</div>
                     <div>
-                      <HiChevronDown className="text-xl" />
+                      <BsChevronDown className="text-xl" />
                     </div>
                   </button>
                 </div>
