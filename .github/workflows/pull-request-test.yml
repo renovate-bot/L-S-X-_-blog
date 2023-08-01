@@ -9,8 +9,6 @@ jobs:
   test:
     name: Run Tests
     runs-on: ubuntu-latest
-    secrets:
-      envPAT: ${{ secrets.envPAT }}
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL}}
       NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET}}
