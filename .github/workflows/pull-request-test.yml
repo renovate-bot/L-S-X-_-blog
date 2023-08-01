@@ -17,12 +17,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "18.14.1" # 这里指定你希望使用的 Node.js 版本
-
-      - name: Install dependencies
-        run: yarn # 这里可以根据你的项目使用适当的包管理器进行安装
-
-      - name: Run tests
-        run: yarn test # 这里运行你的测试脚本或命令
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL}}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET}}
@@ -31,3 +25,9 @@ jobs:
           DISCORD_CLIENT_SECRET: ${{ secrets.DISCORD_CLIENT_SECRET}}
           AUTH_GITHUB_ID: ${{ secrets.AUTH_GITHUB_ID}}
           AUTH_GITHUB_SECRET: ${{ secrets.AUTH_GITHUB_SECRET}}
+
+      - name: Install dependencies
+        run: yarn # 这里可以根据你的项目使用适当的包管理器进行安装
+
+      - name: Run tests
+        run: yarn test # 这里运行你的测试脚本或命令
