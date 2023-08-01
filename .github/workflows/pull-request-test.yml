@@ -20,7 +20,7 @@ jobs:
           node-version: "18.14.1" # 这里指定你希望使用的 Node.js 版本
 
       - name: Install dependencies
-        run: yarn add # 这里可以根据你的项目使用适当的包管理器进行安装
+        run: yarn # 这里可以根据你的项目使用适当的包管理器进行安装
 
       - name: Run tests
         run: yarn test # 这里运行你的测试脚本或命令
