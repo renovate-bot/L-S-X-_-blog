@@ -40,5 +40,5 @@ jobs:
           DISCORD_CLIENT_SECRET: ${{ secrets.DISCORD_CLIENT_SECRET}}
           AUTH_GITHUB_ID: ${{ secrets.AUTH_GITHUB_ID}}
           AUTH_GITHUB_SECRET: ${{ secrets.AUTH_GITHUB_SECRET}}
-          run: yarn test # 这里运行你的测试脚本或命令
+        run: yarn test # 这里运行你的测试脚本或命令
 
