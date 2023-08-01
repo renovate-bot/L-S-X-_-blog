@@ -58,8 +58,8 @@ export const authOptions: NextAuthOptions = {
       authorization: { params: { scope: scopes } },
     }),
     GitHubProvider({
-      clientId: env.GITHUB_ID,
-      clientSecret: env.GITHUB_SECRET,
+      clientId: env.AUTH_GITHUB_ID,
+      clientSecret: env.AUTH_GITHUB_SECRET,
     }),
     /**
      * ...add more providers here.
