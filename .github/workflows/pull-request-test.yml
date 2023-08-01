@@ -3,12 +3,12 @@ on:
   pull_request:
     branches:
       - master # 这里指定你希望测试的分支，例如 master
+
 jobs:
   test:
     name: Run Tests
     runs-on: ubuntu-latest
-    environment:
-      name: production
+
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL}}
       NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET}}
@@ -17,15 +17,18 @@ jobs:
       DISCORD_CLIENT_SECRET: ${{ secrets.DISCORD_CLIENT_SECRET}}
       AUTH_GITHUB_ID: ${{ secrets.AUTH_GITHUB_ID}}
       AUTH_GITHUB_SECRET: ${{ secrets.AUTH_GITHUB_SECRET}}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "18.14.1" # 这里指定你希望使用的 Node.js 版本
+
       - name: Install dependencies
         run: yarn # 这里可以根据你的项目使用适当的包管理器进行安装
-      - name: Run tests
 
+      - name: Run tests
         run: yarn test # 这里运行你的测试脚本或命令
