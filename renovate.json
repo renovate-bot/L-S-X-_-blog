@@ -3,8 +3,13 @@
   "extends": ["config:base", ":dependencyDashboard"],
   "packageRules": [
     {
-      "packagePatterns": ["*"],
+      "matchDepTypes": ["devDependencies"],
+      "matchPackagePatterns": ["eslint", "prettier"],
       "automerge": true
     }
-  ]
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  }
 }
